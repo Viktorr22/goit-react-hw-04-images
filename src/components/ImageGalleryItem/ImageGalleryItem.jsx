@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import { useState, createRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ImageGalleryItem, ImageGalleryImage } from './ImageGalleryItem.styled';
 import { Modal } from 'components';
 
 export function ImageGalleryItemBox({ imageListUrl, imageModal, isAnchor }) {
   const [showModal, setShowModal] = useState(false);
 
-  const liRef = createRef();
+  const liRef = useRef(null);
 
   useEffect(() => {
     if (!liRef.current) return;
